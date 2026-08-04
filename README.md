@@ -1,6 +1,6 @@
 ---
-title: University Services RAG Chatbot
-emoji: 🎓
+title: Trợ Lý Hỏi Đáp Luật Lao Động Cho Người Trẻ
+emoji: ⚖️
 colorFrom: blue
 colorTo: indigo
 sdk: streamlit
@@ -9,17 +9,17 @@ app_file: app.py
 pinned: false
 ---
 
-# Ngày 8 — RAG Pipeline v2
+# Trợ Lý Hỏi Đáp Luật Lao Động Cho Người Trẻ
 
 **Chương 2 | Ngày 8 trong 15**
 
-> Dùng chung chủ đề "University Services" với biến thể K3 của Ngày 7 (`K3_VARIANT.md`), để pipeline Ngày 7 → Ngày 8 nhất quán.
+> RAG chatbot hỗ trợ Gen Z tra cứu quy định về thử việc, tiền lương, làm thêm giờ, nghỉ phép, hợp đồng lao động và chấm dứt hợp đồng.
 
 ---
 
 ## Mục Tiêu
 
-Xây dựng một RAG pipeline thực tế, end-to-end, từ thu thập dữ liệu chính sách và thông tin dịch vụ đại học → xử lý → indexing → retrieval (hybrid + vectorless fallback) → generation có citation.
+Xây dựng một RAG pipeline end-to-end từ thu thập văn bản pháp luật lao động → chuẩn hóa → indexing → retrieval (hybrid + vectorless fallback) → generation có citation.
 
 ---
 
@@ -549,9 +549,22 @@ run_dashboard()
 
 ### Kiến Trúc Hệ Thống
 
+```mermaid
+flowchart LR
+    U[Người dùng] --> UI[Streamlit]
+    UI --> G[Task 10: Generation + Citation]
+    G --> R[Task 9: Retrieval Pipeline]
+    R --> D[Task 5: Dense Search]
+    R --> B[Task 6: BM25]
+    D --> F[Task 7: RRF]
+    B --> F
+    R -- Điểm cosine thấp --> P[Task 8: PageIndex Fallback]
+    F --> G
+    P --> G
+    G --> UI
 ```
-[Vẽ diagram kiến trúc ở đây]
-```
+
+Sơ đồ chi tiết, luồng evaluation và hướng dẫn vận hành nằm tại [`group_project/README.md`](group_project/README.md).
 
 ---
 
@@ -559,23 +572,24 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Nguyễn Hồng Yến (Leader) | 2A202601065 | Task 7, Task 9, Streamlit UI và Conversation Memory | Hoàn thành |
+| Nguyễn Văn Hưng | 2A202601251 | Task 1–4: thu thập, chuẩn hóa, chunking và ChromaDB | Hoàn thành |
+| Đỗ Trung Kiên | 2A202601287 | Task 5, Task 6 và Task 10 | Hoàn thành |
+| Nguyễn Đình Liêm | 2A202601421 | Task 8, Golden Dataset, RAGAS Evaluation và A/B report | Hoàn thành |
 
 ---
 
 ### Hướng Dẫn Chạy
 
-```bash
+```powershell
 # Cài đặt dependencies
 pip install -r requirements.txt
 
 # Chạy app
 streamlit run app.py
-# hoặc
-chainlit run app.py
+
+# Chạy evaluation
+python -m group_project.evaluation.eval_pipeline
 ```
 
 ---

@@ -1,14 +1,14 @@
-# Bài Tập Nhóm — University Services RAG Chatbot
+# Trợ Lý Hỏi Đáp Luật Lao Động Cho Người Trẻ
 
 ## Mục Tiêu
 
-Sau khi hoàn thành bài cá nhân, nhóm ngồi lại để xây dựng **1 trong 2 sản phẩm**:
+Xây dựng trợ lý RAG hỗ trợ người trẻ tra cứu các vấn đề pháp luật lao động phổ biến như thử việc, tiền lương, làm thêm giờ, nghỉ phép, hợp đồng lao động và chấm dứt hợp đồng.
 
 ---
 
-## Yêu cầu 1: Sản phẩm nhóm RAG Chatbot
+## Sản phẩm RAG Chatbot
 
-Xây dựng chatbot trả lời câu hỏi về dịch vụ và chính sách đại học liên quan.
+Chatbot sử dụng Bộ luật Lao động 2019, các văn bản hướng dẫn và tin/bài pháp luật đã thu thập làm nguồn dữ liệu. Câu trả lời được sinh từ context truy xuất và hiển thị nguồn tham khảo để người dùng kiểm chứng.
 
 **Yêu cầu:**
 - Giao diện chat (Streamlit / Gradio / Chainlit)
@@ -50,10 +50,10 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 ### Deliverable Evaluation
 
-- [ ] File `group_project/evaluation/golden_dataset.json` — 15+ cặp Q&A
-- [ ] File `group_project/evaluation/eval_pipeline.py` — script chạy evaluation
-- [ ] File `group_project/evaluation/results.md` — bảng điểm + phân tích
-- [ ] So sánh A/B ít nhất 2 configs
+- [x] File `group_project/evaluation/golden_dataset.json` — 24 cặp Q&A
+- [x] File `group_project/evaluation/eval_pipeline.py` — script chạy evaluation
+- [x] File `group_project/evaluation/results.md` — bảng điểm + phân tích
+- [x] So sánh A/B `dense_no_rerank` và `hybrid_with_rerank`
 
 ---
 
@@ -69,9 +69,36 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 ## Kiến Trúc Hệ Thống
 
+```mermaid
+flowchart TD
+    U[Người dùng] --> UI[Streamlit app.py]
+    UI --> G[Task 10: Generation có citation]
+    G --> R[Task 9: Retrieval Pipeline]
+
+    R --> D[Task 5: Dense Semantic Search]
+    R --> S[Task 6: BM25 Lexical Search]
+    D --> C[(ChromaDB)]
+    S --> M[(Markdown Corpus)]
+    D --> F[Task 7: RRF Reranking]
+    S --> F
+
+    R --> Q{Cosine score đạt threshold?}
+    Q -- Có --> F
+    Q -- Không --> P[Task 8: PageIndex Vectorless Fallback]
+    F --> CTX[Top-k Context]
+    P --> CTX
+    CTX --> G
+    G --> A[Câu trả lời + nguồn trích dẫn]
+    A --> UI
+
+    E[Golden Dataset: 24 Q&A] --> EV[RAGAS Evaluation]
+    R --> EV
+    G --> EV
+    EV --> AB[A/B: Dense-only vs Hybrid + RRF]
+    AB --> RP[results.md]
 ```
-[Vẽ diagram kiến trúc ở đây]
-```
+
+Luồng chuẩn kết hợp semantic search và BM25 bằng Reciprocal Rank Fusion (RRF). Điểm cosine gốc của dense retrieval được dùng riêng để quyết định fallback; nếu thấp hơn ngưỡng, Task 9 gọi PageIndex thay vì so sánh trực tiếp điểm RRF và cosine trên hai thang đo khác nhau. Task 10 sắp xếp lại context, gọi LLM và trả về câu trả lời kèm metadata nguồn cho giao diện.
 
 ---
 
@@ -79,64 +106,54 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| **Nguyễn Hồng Yến** (Leader) | 2A202601065 | Task 7: RRF reranking; Task 9: Retrieval Pipeline; tích hợp Streamlit UI, citation, A/B mode và conversation memory | Hoàn thành |
+| **Nguyễn Văn Hưng** (Role 2)| 2A202601251 | Task 1–4: thu thập văn bản luật và tin bài; chuẩn hóa Markdown; chunking, embedding và lưu ChromaDB | Hoàn thành |
+| **Đỗ Trung Kiên** (Role 3)| 2A202601287 | Task 5: Semantic Search; Task 6: BM25 Lexical Search; Task 10: Generation, reorder context và citation | Hoàn thành |
+| **Nguyễn Đình Liêm** (Role 4)| 2A202601421 | Task 8: PageIndex fallback; Golden Dataset; RAGAS Evaluation Pipeline; A/B testing và báo cáo worst performers | Hoàn thành |
 
 ---
 
 ## Hướng Dẫn Chạy
 
-```bash
+### 1. Cài đặt và cấu hình
+
+```powershell
 # Cài đặt dependencies
 pip install -r requirements.txt
 
-# Chạy app
-streamlit run app.py
-# hoặc
-chainlit run app.py
+# Sao chép file cấu hình mẫu, sau đó điền API key của bạn
+Copy-Item .env.example .env
 ```
 
-## Member 3: PageIndex và Evaluation
+Các biến cần dùng tùy chức năng: `OPENAI_API_KEY` hoặc `OPENROUTER_API_KEY` cho generation/evaluation và `PAGEINDEX_API_KEY` cho vectorless fallback. Không commit file `.env`.
 
-Kiểm tra Golden Dataset 24 câu hỏi luật lao động:
+### 2. Chuẩn bị dữ liệu và index
+
+```powershell
+python -m src.task3_convert_markdown
+python -m src.task4_chunking_indexing
+python -m src.task8_pageindex_vectorless
+```
+
+### 3. Chạy kiểm thử và ứng dụng
+
+```powershell
+python -m pytest tests/test_individual.py -v
+
+# Chạy app
+streamlit run app.py
+```
+
+Ứng dụng hỗ trợ chế độ Dense-only và Hybrid + RRF, điều chỉnh `top_k`, hiển thị nguồn tham khảo và lưu lịch sử hội thoại trong Streamlit session state.
+
+### 4. Chạy evaluation
 
 ```powershell
 python -m group_project.evaluation.eval_pipeline
 ```
 
-Chuẩn bị PageIndex:
+Kết quả tổng hợp được ghi vào `group_project/evaluation/results.md`; answer/context thô của từng cấu hình nằm trong `group_project/evaluation/artifacts/` để có thể tiếp tục sau timeout hoặc rate limit.
 
-1. Tạo API key tại `https://dash.pageindex.ai` và điền `PAGEINDEX_API_KEY` trong `.env`.
-2. Đặt PDF gốc vào `data/landing/legal/`.
-3. Chạy `python -m src.task8_pageindex_vectorless` để đồng bộ tài liệu remote và upload các PDF chưa có.
-4. Script lưu `doc_id`, trạng thái, số trang và citation vào `data/pageindex/documents.json` ngay sau upload/đồng bộ.
-
-Hiện tài khoản đã xử lý thành công `bo-luat-lao-dong-2019.pdf` (83 trang). Gói PageIndex hiện tại trả `LimitReached` khi upload tài liệu thứ hai. Fallback vì vậy truy vấn Bộ luật Lao động; sau khi tăng quota chỉ cần chạy lại uploader để thêm Nghị định 145. Legacy Retrieval API có thể trả rỗng nên module tự chuyển sang Chat API hiện hành và bật citation.
-
-Evaluation cần callable từ Task 9/10 trả đúng contract:
-
-`src.task10_generation.generate_with_citation` đã nhận tham số `use_reranking` và trả `answer` cùng `sources`, nên có thể dùng trực tiếp làm pipeline adapter.
-
-Sau khi có callable:
-
-```python
-from group_project.evaluation.eval_pipeline import compare_configs, export_results, load_golden_dataset, run_ab_evaluation
-from src.task10_generation import generate_with_citation
-
-evaluations = run_ab_evaluation(generate_with_citation, load_golden_dataset())
-comparison = compare_configs(evaluations)
-export_results(comparison)
-```
-
-Hai cấu hình được đo là `dense_no_rerank` và `hybrid_with_rerank` (dense + sparse hợp nhất bằng RRF), nên A/B tạo ra hai đường retrieval thực sự khác nhau.
-
-Raw answer/context được checkpoint sau từng câu tại `group_project/evaluation/artifacts/<config>_rows.json`. Nếu pipeline hoặc RAGAS bị timeout/rate-limit, chạy lại cùng lệnh sẽ bỏ qua câu đã thành công và chỉ thử lại câu lỗi/chưa chạy. Báo cáo hiển thị coverage và lý do lỗi theo từng cấu hình.
-
-RAGAS gọi LLM nhiều lần cho mỗi câu. Nên thử subset 2–3 câu trước, sau đó mới chạy đủ 24 câu khi quota cho phép.
-
----
 
 ## Lưu ý
 
