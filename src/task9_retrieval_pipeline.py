@@ -63,20 +63,18 @@ def retrieve(
     except Exception:
         sparse_results = []
 
-    # Step 2: Merge bằng RRF
-    if dense_results or sparse_results:
+    # Step 2-3: two genuinely different A/B configurations.
+    # True uses hybrid dense+sparse RRF; False is the dense-only baseline.
+    if use_reranking and (dense_results or sparse_results):
         ranked_lists = [l for l in [dense_results, sparse_results] if l]
         merged = rerank_rrf(ranked_lists, top_k=top_k * 2)
         for item in merged:
             item["source"] = "hybrid"
-    else:
-        merged = []
-
-    # Step 3: Rerank hoặc chọn top_k
-    if use_reranking and merged:
         final_results = merged[:top_k]
+    elif not use_reranking:
+        final_results = [dict(item, source="dense") for item in dense_results[:top_k]]
     else:
-        final_results = merged[:top_k]
+        final_results = []
 
     # Step 4: Kiểm tra threshold dùng điểm Cosine gốc (dense_results)
     best_score = dense_results[0]["score"] if dense_results else 0.0

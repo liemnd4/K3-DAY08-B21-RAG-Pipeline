@@ -98,6 +98,44 @@ streamlit run app.py
 chainlit run app.py
 ```
 
+## Member 3: PageIndex và Evaluation
+
+Kiểm tra Golden Dataset 24 câu hỏi luật lao động:
+
+```powershell
+python -m group_project.evaluation.eval_pipeline
+```
+
+Chuẩn bị PageIndex:
+
+1. Tạo API key tại `https://dash.pageindex.ai` và điền `PAGEINDEX_API_KEY` trong `.env`.
+2. Đặt PDF gốc vào `data/landing/legal/`.
+3. Chạy `python -m src.task8_pageindex_vectorless` để đồng bộ tài liệu remote và upload các PDF chưa có.
+4. Script lưu `doc_id`, trạng thái, số trang và citation vào `data/pageindex/documents.json` ngay sau upload/đồng bộ.
+
+Hiện tài khoản đã xử lý thành công `bo-luat-lao-dong-2019.pdf` (83 trang). Gói PageIndex hiện tại trả `LimitReached` khi upload tài liệu thứ hai. Fallback vì vậy truy vấn Bộ luật Lao động; sau khi tăng quota chỉ cần chạy lại uploader để thêm Nghị định 145. Legacy Retrieval API có thể trả rỗng nên module tự chuyển sang Chat API hiện hành và bật citation.
+
+Evaluation cần callable từ Task 9/10 trả đúng contract:
+
+`src.task10_generation.generate_with_citation` đã nhận tham số `use_reranking` và trả `answer` cùng `sources`, nên có thể dùng trực tiếp làm pipeline adapter.
+
+Sau khi có callable:
+
+```python
+from group_project.evaluation.eval_pipeline import compare_configs, export_results, load_golden_dataset, run_ab_evaluation
+from src.task10_generation import generate_with_citation
+
+evaluations = run_ab_evaluation(generate_with_citation, load_golden_dataset())
+comparison = compare_configs(evaluations)
+export_results(comparison)
+```
+
+Hai cấu hình được đo là `dense_no_rerank` và `hybrid_with_rerank` (dense + sparse hợp nhất bằng RRF), nên A/B tạo ra hai đường retrieval thực sự khác nhau.
+
+Raw answer/context được checkpoint sau từng câu tại `group_project/evaluation/artifacts/<config>_rows.json`. Nếu pipeline hoặc RAGAS bị timeout/rate-limit, chạy lại cùng lệnh sẽ bỏ qua câu đã thành công và chỉ thử lại câu lỗi/chưa chạy. Báo cáo hiển thị coverage và lý do lỗi theo từng cấu hình.
+
+RAGAS gọi LLM nhiều lần cho mỗi câu. Nên thử subset 2–3 câu trước, sau đó mới chạy đủ 24 câu khi quota cho phép.
+
 ---
 
 ## Lưu ý

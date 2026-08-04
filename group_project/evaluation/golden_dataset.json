@@ -1,17 +1,221 @@
 [
   {
-    "question": "Học phí hàng năm của chương trình Business tại RMIT Vietnam là bao nhiêu?",
-    "expected_answer": "Khoảng 375.840.000 VND mỗi năm (tùy chương trình cụ thể).",
-    "expected_context": "Trang Tuition Fees, mục Undergraduate Programs"
+    "id": "labor_001",
+    "question": "Thời gian thử việc tối đa đối với lập trình viên có vị trí yêu cầu trình độ cao đẳng trở lên là bao lâu?",
+    "expected_answer": "Tối đa 60 ngày và chỉ được thử việc một lần đối với công việc đó.",
+    "ground_truth_context": "Khoản 2 Điều 25 Bộ luật Lao động 2019 quy định thời gian thử việc không quá 60 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên; chỉ được thử việc một lần đối với một công việc.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 25", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "thu_viec",
+    "difficulty": "easy"
   },
   {
-    "question": "Học phí được thanh toán theo hình thức nào?",
-    "expected_answer": "Thanh toán theo từng học kỳ, tính theo từng môn học đã đăng ký.",
-    "expected_context": "Trang Tuition Fees, mục Payment Structure"
+    "id": "labor_002",
+    "question": "Lương thử việc tối thiểu bằng bao nhiêu phần trăm lương của công việc đó?",
+    "expected_answer": "Ít nhất bằng 85% mức lương của công việc đó.",
+    "ground_truth_context": "Điều 26 Bộ luật Lao động 2019 quy định tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 26", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "thu_viec",
+    "difficulty": "easy"
   },
   {
-    "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
-    "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
-    "expected_context": "Trang Accommodation Services"
+    "id": "labor_003",
+    "question": "Trong thời gian thử việc, người lao động có được nghỉ ngay mà không báo trước không?",
+    "expected_answer": "Có. Trong thời gian thử việc, mỗi bên có quyền hủy bỏ hợp đồng thử việc hoặc hợp đồng lao động đã giao kết mà không cần báo trước và không phải bồi thường.",
+    "ground_truth_context": "Khoản 2 Điều 27 Bộ luật Lao động 2019 cho phép mỗi bên hủy bỏ hợp đồng thử việc hoặc hợp đồng lao động đã giao kết trong thời gian thử việc mà không cần báo trước và không phải bồi thường.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 27", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "thu_viec",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_004",
+    "question": "Công ty giao kết hợp đồng lao động qua email hoặc phương tiện điện tử có hợp pháp không?",
+    "expected_answer": "Có, nếu hợp đồng được giao kết dưới dạng thông điệp dữ liệu theo pháp luật về giao dịch điện tử; hình thức này có giá trị như hợp đồng bằng văn bản.",
+    "ground_truth_context": "Khoản 1 Điều 14 Bộ luật Lao động 2019 quy định hợp đồng lao động được giao kết thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu có giá trị như hợp đồng lao động bằng văn bản.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 14", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "hop_dong",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_005",
+    "question": "Pháp luật hiện hành có những loại hợp đồng lao động nào?",
+    "expected_answer": "Có hai loại: hợp đồng lao động không xác định thời hạn và hợp đồng lao động xác định thời hạn không quá 36 tháng.",
+    "ground_truth_context": "Khoản 1 Điều 20 Bộ luật Lao động 2019 phân loại hợp đồng lao động thành hợp đồng không xác định thời hạn và hợp đồng xác định thời hạn, trong đó thời hạn không quá 36 tháng kể từ thời điểm hợp đồng có hiệu lực.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 20", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "hop_dong",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_006",
+    "question": "Hợp đồng lao động bắt buộc phải có những nội dung chính nào?",
+    "expected_answer": "Hợp đồng phải có thông tin các bên, công việc và địa điểm, thời hạn, lương và các khoản liên quan, chế độ nâng lương, thời giờ làm việc và nghỉ ngơi, bảo hộ lao động, bảo hiểm và đào tạo nghề.",
+    "ground_truth_context": "Khoản 1 Điều 21 Bộ luật Lao động 2019 liệt kê các nội dung chủ yếu của hợp đồng lao động gồm thông tin người sử dụng lao động và người lao động; công việc, địa điểm; thời hạn; tiền lương, phụ cấp và khoản bổ sung; nâng lương; thời giờ làm việc, nghỉ ngơi; bảo hộ; bảo hiểm; đào tạo và bồi dưỡng.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 21", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "hop_dong",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_007",
+    "question": "Người lao động ký hợp đồng không xác định thời hạn muốn nghỉ việc thông thường phải báo trước bao lâu?",
+    "expected_answer": "Ít nhất 45 ngày, trừ một số ngành, nghề, công việc đặc thù được Chính phủ quy định riêng hoặc trường hợp được nghỉ không cần báo trước.",
+    "ground_truth_context": "Điểm a khoản 1 Điều 35 Bộ luật Lao động 2019 quy định người lao động làm việc theo hợp đồng không xác định thời hạn phải báo trước ít nhất 45 ngày khi đơn phương chấm dứt, trừ trường hợp đặc thù và các trường hợp khoản 2 cho phép không báo trước.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 35", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "cham_dut_hop_dong",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_008",
+    "question": "Người lao động bị công ty không trả đủ lương hoặc trả lương không đúng hạn có thể nghỉ mà không báo trước không?",
+    "expected_answer": "Có, trừ trường hợp chậm trả lương do lý do bất khả kháng theo khoản 4 Điều 97.",
+    "ground_truth_context": "Điểm b khoản 2 Điều 35 Bộ luật Lao động 2019 cho phép người lao động đơn phương chấm dứt hợp đồng không cần báo trước khi không được trả đủ lương hoặc trả lương không đúng thời hạn, trừ trường hợp khoản 4 Điều 97.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 35 và Điều 97", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "cham_dut_hop_dong",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_009",
+    "question": "Công ty có được cho nhân viên nghỉ việc chỉ bằng một tin nhắn Zalo không?",
+    "expected_answer": "Không thể kết luận chỉ dựa vào phương tiện thông báo. Việc đơn phương chấm dứt chỉ hợp pháp khi có căn cứ luật định và tuân thủ thời hạn báo trước, trừ trường hợp pháp luật cho phép không báo trước; nếu là xử lý sa thải thì phải đúng căn cứ, nguyên tắc và trình tự kỷ luật.",
+    "ground_truth_context": "Điều 36 Bộ luật Lao động 2019 quy định căn cứ và thời hạn báo trước khi người sử dụng lao động đơn phương chấm dứt. Điều 41 xác định việc chấm dứt trái các quy định này là đơn phương chấm dứt trái pháp luật. Sa thải là hình thức kỷ luật theo Điều 124 và chỉ áp dụng trong các trường hợp Điều 125, theo nguyên tắc và trình tự Điều 122.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 36, 41, 122, 124 và 125", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "sa_thai",
+    "difficulty": "hard"
+  },
+  {
+    "id": "labor_010",
+    "question": "Sau khi chấm dứt hợp đồng, công ty phải thanh toán các khoản liên quan trong bao lâu?",
+    "expected_answer": "Thông thường trong 14 ngày làm việc kể từ ngày chấm dứt; một số trường hợp đặc biệt có thể kéo dài nhưng không quá 30 ngày.",
+    "ground_truth_context": "Khoản 1 Điều 48 Bộ luật Lao động 2019 yêu cầu hai bên thanh toán đầy đủ các khoản liên quan đến quyền lợi trong 14 ngày làm việc từ ngày chấm dứt hợp đồng; các trường hợp được liệt kê có thể kéo dài nhưng không quá 30 ngày.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 48", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "cham_dut_hop_dong",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_011",
+    "question": "Công ty có được ép nhân viên dùng lương để mua hàng của công ty không?",
+    "expected_answer": "Không. Người sử dụng lao động không được hạn chế hoặc can thiệp quyền tự quyết chi tiêu lương, và không được ép người lao động chi tiêu lương vào việc mua hàng hóa, sử dụng dịch vụ của mình hoặc đơn vị do mình chỉ định.",
+    "ground_truth_context": "Khoản 2 Điều 94 Bộ luật Lao động 2019 cấm người sử dụng lao động hạn chế hoặc can thiệp quyền tự quyết chi tiêu lương của người lao động và cấm ép dùng lương mua hàng hóa, dịch vụ của người sử dụng lao động hoặc đơn vị được chỉ định.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 94", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "tien_luong",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_012",
+    "question": "Nếu trả lương chậm từ 15 ngày trở lên, công ty có phải trả thêm tiền không?",
+    "expected_answer": "Có. Công ty phải đền bù ít nhất bằng tiền lãi của số tiền trả chậm, tính theo lãi suất huy động tiền gửi có kỳ hạn một tháng của ngân hàng nơi công ty mở tài khoản trả lương tại thời điểm trả.",
+    "ground_truth_context": "Khoản 4 Điều 97 Bộ luật Lao động 2019 quy định khi vì lý do bất khả kháng mà đã khắc phục nhưng vẫn trả chậm thì không được chậm quá 30 ngày; nếu chậm từ 15 ngày trở lên phải đền bù ít nhất bằng tiền lãi của số tiền trả chậm theo lãi suất được luật xác định.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 97", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "tien_luong",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_013",
+    "question": "Mức khấu trừ lương hằng tháng tối đa để bồi thường thiệt hại là bao nhiêu?",
+    "expected_answer": "Không quá 30% tiền lương thực trả hằng tháng sau khi đã trích nộp các khoản bảo hiểm bắt buộc và thuế thu nhập cá nhân.",
+    "ground_truth_context": "Khoản 3 Điều 102 Bộ luật Lao động 2019 giới hạn mức khấu trừ tiền lương hằng tháng không quá 30% tiền lương thực trả sau khi trích nộp bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp và thuế thu nhập cá nhân.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 102", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "tien_luong",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_014",
+    "question": "Thời giờ làm việc bình thường tối đa là bao nhiêu giờ?",
+    "expected_answer": "Không quá 8 giờ trong một ngày và không quá 48 giờ trong một tuần. Nếu bố trí theo tuần thì không quá 10 giờ trong một ngày và vẫn không quá 48 giờ trong một tuần.",
+    "ground_truth_context": "Điều 105 Bộ luật Lao động 2019 quy định thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và 48 giờ trong 01 tuần; nếu theo tuần thì không quá 10 giờ trong 01 ngày và 48 giờ trong 01 tuần.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 105", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "thoi_gio_lam_viec",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_015",
+    "question": "Công ty muốn nhân viên làm thêm giờ có cần sự đồng ý của nhân viên không?",
+    "expected_answer": "Có. Thông thường công ty phải có sự đồng ý của người lao động về thời gian, địa điểm và công việc làm thêm, trừ các trường hợp làm thêm đặc biệt theo Điều 108.",
+    "ground_truth_context": "Điểm a khoản 2 Điều 107 Bộ luật Lao động 2019 yêu cầu phải được người lao động đồng ý làm thêm giờ. Điều 59 Nghị định 145/2020/NĐ-CP cụ thể hóa sự đồng ý về thời gian, địa điểm và công việc làm thêm, trừ trường hợp Điều 108 Bộ luật Lao động.",
+    "sources": [
+      {"document": "Bộ luật Lao động 2019", "article": "Điều 107 và 108", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"},
+      {"document": "Nghị định 145/2020/NĐ-CP", "article": "Điều 59", "source_url": "https://vanban.chinhphu.vn/?docid=201967&pageid=27160"}
+    ],
+    "category": "lam_them_gio",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_016",
+    "question": "Tiền lương làm thêm vào ngày nghỉ hằng tuần ít nhất bằng bao nhiêu?",
+    "expected_answer": "Ít nhất bằng 200% tiền lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm, chưa kể tiền lương ngày nghỉ đối với người hưởng lương ngày.",
+    "ground_truth_context": "Điểm b khoản 1 Điều 98 Bộ luật Lao động 2019 quy định làm thêm giờ vào ngày nghỉ hằng tuần được trả ít nhất bằng 200%, chưa kể tiền lương ngày nghỉ hằng tuần đối với người lao động hưởng lương ngày.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 98", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "lam_them_gio",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_017",
+    "question": "Nhân viên làm đủ 12 tháng trong điều kiện bình thường có bao nhiêu ngày phép năm?",
+    "expected_answer": "12 ngày làm việc và được hưởng nguyên lương theo hợp đồng lao động.",
+    "ground_truth_context": "Điểm a khoản 1 Điều 113 Bộ luật Lao động 2019 quy định người làm đủ 12 tháng cho một người sử dụng lao động trong điều kiện bình thường được nghỉ hằng năm 12 ngày làm việc và hưởng nguyên lương theo hợp đồng.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 113", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "nghi_phep",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_018",
+    "question": "Người lao động kết hôn được nghỉ mấy ngày hưởng nguyên lương?",
+    "expected_answer": "Được nghỉ 3 ngày và phải thông báo cho người sử dụng lao động.",
+    "ground_truth_context": "Điểm a khoản 1 Điều 115 Bộ luật Lao động 2019 quy định người lao động kết hôn được nghỉ việc riêng 03 ngày, hưởng nguyên lương và phải thông báo cho người sử dụng lao động.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 115", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "nghi_phep",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_019",
+    "question": "Khi xử lý kỷ luật lao động, công ty có nghĩa vụ chứng minh lỗi của người lao động không?",
+    "expected_answer": "Có. Người sử dụng lao động phải chứng minh được lỗi của người lao động; người lao động phải có mặt, có quyền tự bào chữa hoặc nhờ người bào chữa và việc xử lý phải được lập thành biên bản.",
+    "ground_truth_context": "Khoản 1 Điều 122 Bộ luật Lao động 2019 quy định người sử dụng lao động phải chứng minh lỗi; phải có sự tham gia của tổ chức đại diện người lao động trong trường hợp luật định; người lao động phải có mặt và có quyền bào chữa; việc xử lý phải được ghi thành biên bản.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 122", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "ky_luat_sa_thai",
+    "difficulty": "medium"
+  },
+  {
+    "id": "labor_020",
+    "question": "Công ty có được phạt tiền hoặc cắt lương thay cho xử lý kỷ luật lao động không?",
+    "expected_answer": "Không. Phạt tiền hoặc cắt lương thay cho việc xử lý kỷ luật lao động là hành vi bị nghiêm cấm.",
+    "ground_truth_context": "Khoản 2 Điều 127 Bộ luật Lao động 2019 nghiêm cấm dùng hình thức phạt tiền, cắt lương thay việc xử lý kỷ luật lao động.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điều 127", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "ky_luat_sa_thai",
+    "difficulty": "easy"
+  },
+  {
+    "id": "labor_021",
+    "question": "Hai vị trí đều gọi là nhân viên kỹ thuật nhưng một vị trí yêu cầu cao đẳng, vị trí còn lại chỉ yêu cầu trung cấp thì thời gian thử việc tối đa có giống nhau không?",
+    "expected_answer": "Không. Công việc yêu cầu trình độ từ cao đẳng trở lên được thử việc tối đa 60 ngày; công việc yêu cầu trình độ trung cấp, công nhân kỹ thuật hoặc nhân viên nghiệp vụ được thử việc tối đa 30 ngày.",
+    "ground_truth_context": "Khoản 2 Điều 25 Bộ luật Lao động 2019 quy định tối đa 60 ngày đối với công việc cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên. Khoản 3 cùng điều quy định tối đa 30 ngày đối với công việc cần trình độ trung cấp, công nhân kỹ thuật hoặc nhân viên nghiệp vụ.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Khoản 2 và khoản 3 Điều 25", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "thu_viec",
+    "difficulty": "hard"
+  },
+  {
+    "id": "labor_022",
+    "question": "Nhân viên làm theo thời giờ bình thường 8 giờ một ngày có thể bị yêu cầu làm thêm 5 giờ trong ngày đó nếu đã đồng ý không?",
+    "expected_answer": "Thông thường không. Khi áp dụng thời giờ làm việc bình thường theo ngày, số giờ làm thêm không được quá 50% số giờ làm việc bình thường trong một ngày; với ngày làm 8 giờ thì giới hạn thông thường là 4 giờ làm thêm. Sự đồng ý của người lao động không làm mất giới hạn này.",
+    "ground_truth_context": "Điểm b khoản 2 Điều 107 Bộ luật Lao động 2019 yêu cầu số giờ làm thêm không quá 50% số giờ làm việc bình thường trong 01 ngày khi áp dụng quy định thời giờ làm việc bình thường theo ngày; đồng thời pháp luật còn quy định các giới hạn theo ngày, tháng và năm.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điểm b khoản 2 Điều 107", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "lam_them_gio",
+    "difficulty": "hard"
+  },
+  {
+    "id": "labor_023",
+    "question": "Người ký hợp đồng lao động 10 tháng và người ký hợp đồng 24 tháng muốn đơn phương nghỉ việc trong trường hợp thông thường có cùng thời hạn báo trước không?",
+    "expected_answer": "Không. Với hợp đồng dưới 12 tháng phải báo trước ít nhất 3 ngày làm việc; với hợp đồng xác định thời hạn từ 12 đến 36 tháng phải báo trước ít nhất 30 ngày, trừ trường hợp được nghỉ không cần báo trước hoặc ngành nghề đặc thù.",
+    "ground_truth_context": "Điểm b khoản 1 Điều 35 Bộ luật Lao động 2019 quy định báo trước ít nhất 30 ngày đối với hợp đồng xác định thời hạn từ 12 đến 36 tháng. Điểm c khoản 1 quy định báo trước ít nhất 03 ngày làm việc đối với hợp đồng xác định thời hạn dưới 12 tháng.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Điểm b và điểm c khoản 1 Điều 35", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "cham_dut_hop_dong",
+    "difficulty": "hard"
+  },
+  {
+    "id": "labor_024",
+    "question": "Nhân viên mới làm việc 6 tháng trong điều kiện bình thường có mặc nhiên được đủ 12 ngày phép năm như người đã làm đủ 12 tháng không?",
+    "expected_answer": "Không. Người làm chưa đủ 12 tháng được nghỉ hằng năm theo tỷ lệ tương ứng với số tháng làm việc; không mặc nhiên được đủ 12 ngày như người làm đủ 12 tháng.",
+    "ground_truth_context": "Khoản 1 Điều 113 Bộ luật Lao động 2019 quy định 12 ngày nghỉ hằng năm cho người làm đủ 12 tháng trong điều kiện bình thường. Khoản 2 cùng điều quy định người làm chưa đủ 12 tháng có số ngày nghỉ hằng năm theo tỷ lệ tương ứng với số tháng làm việc.",
+    "sources": [{"document": "Bộ luật Lao động 2019", "article": "Khoản 1 và khoản 2 Điều 113", "source_url": "https://vanban.chinhphu.vn/?classid=1&docid=198540&pageid=27160"}],
+    "category": "nghi_phep",
+    "difficulty": "hard"
   }
 ]

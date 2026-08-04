@@ -79,10 +79,11 @@ def format_context(chunks: list[dict]) -> str:
 BASIC_PROMPT = """Bạn là trợ lý AI trả lời câu hỏi dựa trên văn bản được cung cấp."""
 
 def generate_with_citation(
-    query: str, 
-    top_k: int = TOP_K, 
+    query: str,
+    top_k: int = TOP_K,
     chat_history: list = None,
-    mode: str = "advanced"
+    mode: str = "advanced",
+    use_reranking: bool = True,
 ) -> dict:
     """
     End-to-end RAG generation có citation và hỗ trợ multi-turn conversation memory.
@@ -92,6 +93,7 @@ def generate_with_citation(
         top_k: Số lượng chunks retrieval
         chat_history: Lịch sử hội thoại dạng list [{'role': 'user'|'assistant', 'content': str}]
         mode: 'advanced' (Hybrid + RRF + Reorder + Citation) hoặc 'naive' (Naive Vector + No RRF)
+        use_reranking: Dùng hybrid RRF khi True, dense-only baseline khi False.
     """
     import time
     start_time = time.time()
@@ -107,7 +109,9 @@ def generate_with_citation(
     else:
         try:
             from .task9_retrieval_pipeline import retrieve
-            chunks = retrieve(query, top_k=top_k)
+            chunks = retrieve(
+                query, top_k=top_k, use_reranking=use_reranking
+            )
         except Exception:
             chunks = []
         reordered = reorder_for_llm(chunks)
