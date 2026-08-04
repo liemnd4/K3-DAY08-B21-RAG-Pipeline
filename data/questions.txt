@@ -1,0 +1,55 @@
+1. Phạm vi áp dụng và tuyển dụng
+Tôi làm việc thường xuyên nhưng công ty gọi hợp đồng là “hợp đồng cộng tác viên”, vậy có được xem là quan hệ lao động không?
+Công ty yêu cầu ứng viên nộp bản chính bằng đại học để giữ trong thời gian làm việc có hợp pháp không?
+Nhà tuyển dụng có được yêu cầu người lao động đặt cọc tiền hoặc tài sản trước khi nhận việc không?
+Công ty yêu cầu tôi cung cấp thông tin tình trạng hôn nhân và kế hoạch sinh con khi phỏng vấn có đúng luật không?
+Doanh nghiệp có được từ chối tuyển dụng chỉ vì ứng viên đang mang thai không?
+
+2. Hợp đồng lao động
+Hợp đồng lao động bắt buộc phải lập thành văn bản trong những trường hợp nào?
+Thỏa thuận qua email hoặc tin nhắn có được coi là hợp đồng lao động không?
+Công ty gọi thỏa thuận là “hợp đồng dịch vụ” nhưng tôi làm việc theo giờ và chịu sự quản lý của trưởng phòng thì xử lý thế nào?
+Hợp đồng lao động phải có những nội dung chủ yếu nào?
+Pháp luật hiện cho phép ký những loại hợp đồng lao động nào?
+
+3. Hợp đồng lao động điện tử
+Ký hợp đồng lao động bằng chữ ký điện tử có giá trị như bản giấy không?
+Hai bên ký hợp đồng bằng OTP trên ứng dụng của công ty có hợp lệ không?
+Hợp đồng điện tử phải được lưu trữ trong bao lâu và người lao động có quyền tải bản sao không?
+Công ty sửa nội dung hợp đồng điện tử sau khi tôi ký thì làm sao chứng minh?
+Hợp đồng điện tử có cần được gửi lên một nền tảng hoặc cơ quan nhà nước không?
+
+4. Thử việc và đào tạo nghề
+Thời gian thử việc tối đa cho lập trình viên là bao lâu?
+Một công việc có được thử việc hai lần không?
+Lương thử việc tối thiểu bằng bao nhiêu phần trăm lương chính thức?
+Công ty yêu cầu tôi thử việc không lương trong hai tuần có hợp pháp không?
+Trong thời gian thử việc, tôi muốn nghỉ ngay có phải báo trước không?
+
+5. Tiền lương và trả lương
+Mức lương tối thiểu vùng nơi tôi làm việc năm 2026 là bao nhiêu?
+Tôi làm online cho công ty ở vùng I nhưng sống ở vùng III thì áp dụng mức lương tối thiểu của vùng nào?
+Lương ghi trong hợp đồng có được thấp hơn lương tối thiểu nếu có thêm phụ cấp không?
+Công ty trả lương chậm thì phải trả thêm tiền cho người lao động thế nào?
+Công ty được chậm trả lương tối đa bao nhiêu ngày?
+
+6. Thời giờ làm việc và làm thêm
+Thời giờ làm việc bình thường tối đa trong một ngày và một tuần là bao nhiêu?
+Công ty áp dụng tuần làm việc sáu ngày, mỗi ngày tám giờ có hợp pháp không?
+Công ty có được bắt nhân viên làm thêm giờ không?
+Sự đồng ý làm thêm qua tin nhắn có hợp lệ không?
+Người lao động được làm thêm tối đa bao nhiêu giờ trong tháng và trong năm?
+
+8. Tạm hoãn và chấm dứt hợp đồng
+Những trường hợp nào người lao động được tạm hoãn hợp đồng?
+Nghỉ thai sản có làm chấm dứt hợp đồng lao động không?
+Người lao động được đơn phương nghỉ việc mà không cần lý do không?
+Tôi phải báo trước bao nhiêu ngày khi nghỉ việc?
+Trường hợp nào người lao động được nghỉ ngay mà không cần báo trước?
+
+10. Quấy rối, phân biệt đối xử và quyền riêng tư
+Thế nào là quấy rối tình dục tại nơi làm việc?
+Tin nhắn có nội dung quấy rối ngoài giờ làm việc có thuộc phạm vi nơi làm việc không?
+Công ty phải quy định việc phòng chống quấy rối tình dục trong nội quy thế nào?
+Người tố cáo quấy rối có được bảo vệ khỏi việc trả đũa không?
+Công ty trả lương nam và nữ khác nhau cho cùng công việc có hợp pháp không?

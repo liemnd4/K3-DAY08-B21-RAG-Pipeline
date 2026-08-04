@@ -3,8 +3,8 @@ from pathlib import Path
 from sentence_transformers import SentenceTransformer
 
 CHROMA_DIR = Path(__file__).parent.parent / "chroma_db"
-COLLECTION_NAME = "university_services_docs"
-EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
+COLLECTION_NAME = "labor_law_genz_docs"
+EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
 _model = None
 

@@ -1,0 +1,112 @@
+1. Hợp đồng lao động và Thử việc
+
+Thời gian thử việc tối đa cho vị trí lập trình viên hoặc kỹ sư có trình độ đại học là bao lâu?
+Trả lời: Thời gian thử việc tối đa là 60 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên (bao gồm vị trí lập trình viên, kỹ sư phần mềm).
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 25; hop-dong-lao-dong-mau-genz.md — Điều khoản thử việc và nghỉ phép.
+
+Mức lương thử việc tối thiểu được pháp luật quy định bằng bao nhiêu % mức lương chính thức?
+Trả lời: Tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 26; quy-dinh-thu-viec-va-hoc-viec.md — Mục 1.
+
+Doanh nghiệp có được áp dụng thời gian thử việc 180 ngày đối với nhân viên lập trình viên thông thường không?
+Trả lời: Không. Mức thử việc tối đa 180 ngày chỉ áp dụng đối với công việc của người quản lý doanh nghiệp theo quy định của Luật Doanh nghiệp. Lập trình viên chỉ thử việc tối đa 60 ngày.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 25.
+
+Thời gian thử việc tối đa đối với công việc yêu cầu trình độ trung cấp hoặc công nhân kỹ thuật là bao lâu?
+Trả lời: Thời gian thử việc tối đa không quá 30 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật trung cấp, công nhân kỹ thuật, nhân viên nghiệp vụ.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 25.
+
+Một người lao động có thể bị công ty yêu cầu thử việc nhiều lần cho cùng một vị trí công việc không?
+Trả lời: Không. Thời gian thử việc do hai bên thỏa thuận căn cứ vào tính chất và mức độ phức tạp của công việc nhưng chỉ được thử việc một lần đối với một công việc.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 25.
+
+
+2. Phân biệt Thử việc vs Thực tập sinh / Học việc 0 đồng
+
+Công ty tuyển Thực tập sinh làm ra sản phẩm và doanh thu nhưng không trả lương có đúng luật không?
+Trả lời: Không đúng luật. Theo Bộ luật Lao động 2019, nếu nhân viên trực tiếp tham gia tạo ra sản phẩm, doanh thu cho công ty thì bắt buộc phải ký Hợp đồng thử việc hoặc Hợp đồng lao động, mức lương thử việc tối thiểu phải đạt 85% lương công việc.
+Nguồn trong context: quy-dinh-thu-viec-va-hoc-viec.md — Mục 1.
+
+Trong thời gian thử việc, tôi có quyền nghỉ việc ngay mà không cần báo trước hay bồi thường không?
+Trả lời: Có. Trong thời gian thử việc, mỗi bên có quyền hủy bỏ thỏa thuận thử việc mà không cần báo trước và không phải bồi thường nếu việc thử việc không đạt yêu cầu mà hai bên đã thỏa thuận.
+Nguồn trong context: quy-dinh-thu-viec-va-hoc-viec.md — Mục 2.
+
+Thực tập sinh Gen Z có bị bắt buộc phải ký hợp đồng lao động nếu công ty giao KPI như nhân viên chính thức không?
+Trả lời: Có. Nếu bạn trực tiếp làm ra sản phẩm, giải quyết công việc chuyên môn của doanh nghiệp thì doanh nghiệp bắt buộc phải giao kết Hợp đồng thử việc hoặc Hợp đồng lao động và trả lương tối thiểu 85% lương chính thức.
+Nguồn trong context: quy-dinh-thu-viec-va-hoc-viec.md — Mục 1.
+
+Công ty trả lương thử việc 50% mức lương chính thức với lý do 'đang đào tạo học việc' có hợp pháp không?
+Trả lời: Không hợp pháp. Luật quy định mức lương thử việc ít nhất phải bằng 85% mức lương chính thức của công việc đó.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 26; quy-dinh-thu-viec-va-hoc-viec.md — Mục 1.
+
+
+3. Thời giờ làm việc và Làm thêm giờ (OT)
+
+Thời giờ làm việc bình thường tối đa theo quy định pháp luật là bao nhiêu giờ một ngày và một tuần?
+Trả lời: Thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. Nhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 105.
+
+Trường hợp công ty áp dụng thời giờ làm việc theo tuần thì một ngày được làm tối đa bao nhiêu giờ?
+Trả lời: Trường hợp làm việc theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 105.
+
+Doanh nghiệp có được tự ý ép buộc nhân viên làm thêm giờ (OT) khi chưa có sự đồng ý của nhân viên không?
+Trả lời: Không. Người sử dụng lao động chỉ được sử dụng người lao động làm thêm giờ khi đáp ứng điều kiện phải được sự đồng ý của người lao động.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 107.
+
+Số giờ làm thêm (OT) tối đa của người lao động trong 1 ngày, 1 tháng và 1 năm được quy định như thế nào?
+Trả lời: Bảo đảm số giờ làm thêm không quá 50% số giờ làm việc bình thường trong 01 ngày; không quá 40 giờ trong 01 tháng và tổng số không quá 200 giờ trong 01 năm (trường hợp đặc biệt không quá 300 giờ/năm).
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 107.
+
+
+4. Tiền lương làm thêm giờ (OT) và Làm việc ca đêm
+
+Tiền lương làm thêm giờ (OT) vào ngày làm việc bình thường được tính bằng bao nhiêu % lương ngày thường?
+Trả lời: Tiền lương làm thêm giờ vào ngày thường được trả ít nhất bằng 150% so với tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường.
+Nguồn trong context: nghi-dinh-145-2020-nd-cp.md — Điều 55.
+
+Làm thêm giờ (OT) vào ngày nghỉ hằng tuần (Thứ 7, Chủ nhật) được trả lương thêm bao nhiêu %?
+Trả lời: Làm thêm giờ vào ngày nghỉ hằng tuần được trả lương ít nhất bằng 200% so với tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường.
+Nguồn trong context: nghi-dinh-145-2020-nd-cp.md — Điều 55.
+
+Mức lương làm thêm giờ vào ngày nghỉ Lễ, Tết hoặc ngày nghỉ có hưởng lương được tính như thế nào?
+Trả lời: Vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương, tiền lương OT ít nhất bằng 300% chưa kể tiền lương ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương đối với người lao động hưởng lương ngày.
+Nguồn trong context: nghi-dinh-145-2020-nd-cp.md — Điều 55.
+
+Khung giờ nào được pháp luật tính là làm việc vào ban đêm và mức phụ cấp ban đêm là bao nhiêu?
+Trả lời: Khung giờ làm việc vào ban đêm là từ 22 giờ đêm đến 6 giờ sáng ngày hôm sau. Người lao động được trả thêm ít nhất bằng 30% tiền lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường.
+Nguồn trong context: nghi-dinh-145-2020-nd-cp.md — Điều 56.
+
+Người lao động làm thêm giờ (OT) vào ban đêm thì ngoài tiền lương OT và phụ cấp ca đêm có được cộng thêm tiền lương không?
+Trả lời: Có. Ngoài việc được trả lương OT (Điều 55) và phụ cấp ban đêm 30% (Điều 56), người lao động còn được trả thêm 20% tiền lương tính theo đơn giá tiền lương hoặc tiền lương theo công việc làm vào ban ngày.
+Nguồn trong context: nghi-dinh-145-2020-nd-cp.md — Điều 57.
+
+
+5. Nghỉ phép hằng năm và Chế độ bảo hiểm
+
+Người lao động làm việc đủ 12 tháng cho một công ty thì được hưởng bao nhiêu ngày nghỉ phép hằng năm?
+Trả lời: Người lao động làm việc đủ 12 tháng được nghỉ hằng năm, hưởng nguyên lương 12 ngày làm việc đối với người làm công việc trong điều kiện bình thường.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 113; hop-dong-lao-dong-mau-genz.md — Điều khoản thử việc và nghỉ phép.
+
+Theo mẫu hợp đồng lao động Gen Z, mức lương chính của lập trình viên là bao nhiêu và công ty đóng bảo hiểm như thế nào?
+Trả lời: Theo hợp đồng mẫu Gen Z Tech, mức lương chính là 15.000.000 VNĐ/tháng, phụ cấp ăn trưa và đi lại là 1.500.000 VNĐ/tháng. Công ty trích nộp đầy đủ BHXH, BHYT, BHTN theo đúng mức lương ghi trong hợp đồng lao động.
+Nguồn trong context: hop-dong-lao-dong-mau-genz.md — Điều khoản về thời giờ làm việc và tiền lương.
+
+Lao động chưa thành niên hoặc người làm công việc nặng nhọc, độc hại được nghỉ phép hằng năm bao nhiêu ngày?
+Trả lời: Được nghỉ 14 ngày làm việc đối với lao động chưa thành niên, lao động khuyết tật, người làm công việc nặng nhọc, độc hại; và 16 ngày làm việc đối với công việc đặc biệt nặng nhọc, độc hại, nguy hiểm.
+Nguồn trong context: bo-luat-lao-dong-2019.md — Điều 113.
+
+
+6. Các trường hợp ngoài context (Dùng cho test Fallback của Task 10)
+
+Công ty sa thải người lao động qua tin nhắn Zalo mà không báo trước có đúng luật không?
+Trả lời: Không đủ thông tin trong context hiện tại để kết luận. Corpus pháp luật hiện có chưa quy định chi tiết về các trường hợp kỷ luật sa thải hoặc thủ tục sa thải qua phương tiện điện tử.
+Nguồn trong context: Không có.
+
+Mức trợ cấp thất nghiệp mà người lao động được nhận khi mất việc là bao nhiêu % lương?
+Trả lời: Không đủ thông tin trong context hiện tại để kết luận. Corpus chưa chứa quy định về Luật Việc làm và mức hưởng trợ cấp thất nghiệp.
+Nguồn trong context: Không có.
+
+Người lao động bị tai nạn lao động trên đường đi làm có được công ty bồi thường không?
+Trả lời: Không đủ thông tin trong context hiện tại để kết luận. Corpus chưa cung cấp các điều khoản về an toàn, vệ sinh lao động và chế độ tai nạn lao động.
+Nguồn trong context: Không có.

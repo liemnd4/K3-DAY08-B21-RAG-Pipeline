@@ -9,6 +9,9 @@ CORPUS: list[dict] = []
 _bm25_index = None
 
 
+STOP_WORDS = {"của", "bộ", "luật", "lao", "động", "quy", "định", "về", "vấn", "đề", "gì", "là", "như", "thế", "nào", "bao", "nhiêu", "có", "được", "không", "theo", "cho", "tôi", "hỏi", "bằng", "với", "phải"}
+
+
 def tokenize(text: str) -> list[str]:
     """Tokenize text using underthesea if available, otherwise whitespace split."""
     text_lower = text.lower()
@@ -18,6 +21,12 @@ def tokenize(text: str) -> list[str]:
     except ImportError:
         tokens = text_lower.split()
     return tokens
+
+
+def tokenize_query(query: str) -> list[str]:
+    tokens = tokenize(query)
+    filtered = [t for t in tokens if t not in STOP_WORDS]
+    return filtered if filtered else tokens
 
 
 def load_corpus() -> list[dict]:
@@ -33,7 +42,7 @@ def load_corpus() -> list[dict]:
         try:
             import chromadb
             client = chromadb.PersistentClient(path=str(CHROMA_DIR))
-            collection = client.get_collection(name="university_services_docs")
+            collection = client.get_collection(name="labor_law_genz_docs")
             all_docs = collection.get(include=["documents", "metadatas"])
             if all_docs and all_docs.get("documents"):
                 for doc, meta in zip(all_docs["documents"], all_docs["metadatas"]):
@@ -102,7 +111,7 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     if not bm25 or not corpus:
         return []
 
-    tokenized_query = tokenize(query)
+    tokenized_query = tokenize_query(query)
     scores = bm25.get_scores(tokenized_query)
 
     top_indices = np.argsort(scores)[::-1][:top_k]
@@ -116,6 +125,15 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
                 "score": round(score_val, 4),
                 "metadata": corpus[idx]["metadata"]
             })
+
+    if not results and corpus:
+        for idx in range(min(top_k, len(corpus))):
+            results.append({
+                "content": corpus[idx]["content"],
+                "score": 0.0001,
+                "metadata": corpus[idx]["metadata"]
+            })
+
     return results
 
 

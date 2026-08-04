@@ -17,14 +17,13 @@ LLM_MODEL = "gpt-4o-mini"
 # =============================================================================
 
 SYSTEM_PROMPT = """Bạn là Trợ lý AI tra cứu và giải đáp các vấn đề pháp lý lao động cho người trẻ / Gen Z
-(thử việc, OT, nghỉ phép, hợp đồng học việc, sa thải, bảo hiểm, lương thưởng).
+(thử việc, OT, nghỉ phép, hợp đồng, sa thải, bảo hiểm, lương thưởng).
 
-Quy tắc bắt buộc:
-1. Chỉ sử dụng thông tin từ context được cung cấp — KHÔNG bịa đặt thông tin.
-2. Mỗi khẳng định phải có trích dẫn nguồn ngay sau đó, ví dụ: [Bộ luật Lao động, 2019] hoặc [Hợp đồng lao động mẫu, 2023].
-3. Nếu context không đủ thông tin để trả lời câu hỏi → trả lời chính xác câu: "Tôi không thể xác minh thông tin này từ nguồn hiện có"
-4. Trả lời bằng tiếng Việt, rõ ràng, mạch lạc, dễ hiểu cho người trẻ.
-5. Không suy luận hay mở rộng ngoài những gì được nêu trong context."""
+Quy tắc trả lời:
+1. Ưu tiên tối đa các thông tin và căn cứ pháp lý từ context được cung cấp.
+2. Mỗi khẳng định dựa trên tài liệu cần có trích dẫn nguồn ngay sau đó, ví dụ: [Bộ luật Lao động, 2019] hoặc [Nghị định 145/2020/NĐ-CP].
+3. Trả lời bằng tiếng Việt chuyên nghiệp, rõ ràng, dễ hiểu cho người trẻ, giải thích ngắn gọn bản chất vấn đề.
+4. Nếu context chưa chứa đầy đủ chi tiết, hãy tổng hợp thông tin liên quan có trong context để giải đáp một cách chính xác nhất."""
 
 
 # =============================================================================
@@ -73,27 +72,59 @@ def format_context(chunks: list[dict]) -> str:
 # GENERATION
 # =============================================================================
 
-def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
-    """
-    End-to-end RAG generation có citation.
-    """
-    try:
-        from .task9_retrieval_pipeline import retrieve
-        chunks = retrieve(query, top_k=top_k)
-    except Exception:
-        chunks = []
+# =============================================================================
+# GENERATION (Hỗ trợ Multi-turn Memory & Comparison Mode)
+# =============================================================================
 
-    reordered = reorder_for_llm(chunks)
+BASIC_PROMPT = """Bạn là trợ lý AI trả lời câu hỏi dựa trên văn bản được cung cấp."""
+
+def generate_with_citation(
+    query: str, 
+    top_k: int = TOP_K, 
+    chat_history: list = None,
+    mode: str = "advanced"
+) -> dict:
+    """
+    End-to-end RAG generation có citation và hỗ trợ multi-turn conversation memory.
+    
+    Args:
+        query: Câu hỏi hiện tại
+        top_k: Số lượng chunks retrieval
+        chat_history: Lịch sử hội thoại dạng list [{'role': 'user'|'assistant', 'content': str}]
+        mode: 'advanced' (Hybrid + RRF + Reorder + Citation) hoặc 'naive' (Naive Vector + No RRF)
+    """
+    import time
+    start_time = time.time()
+
+    if mode == "naive":
+        try:
+            from .task5_semantic_search import semantic_search
+            chunks = semantic_search(query, top_k=top_k)
+        except Exception:
+            chunks = []
+        reordered = chunks
+        prompt_template = BASIC_PROMPT
+    else:
+        try:
+            from .task9_retrieval_pipeline import retrieve
+            chunks = retrieve(query, top_k=top_k)
+        except Exception:
+            chunks = []
+        reordered = reorder_for_llm(chunks)
+        prompt_template = SYSTEM_PROMPT
+
     context = format_context(reordered) if reordered else "Không có context."
-
     user_message = f"Context:\n{context}\n\n---\n\nQuestion: {query}"
 
     api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OPENROUTER_API_KEY")
     if not api_key:
+        elapsed = round(time.time() - start_time, 3)
         return {
             "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có (Thiếu API Key).",
             "sources": chunks,
-            "retrieval_source": chunks[0].get("source", "none") if chunks else "none"
+            "retrieval_source": chunks[0].get("source", "none") if chunks else "none",
+            "mode": mode,
+            "elapsed_sec": elapsed
         }
 
     from openai import OpenAI
@@ -103,22 +134,31 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
 
     client = OpenAI(api_key=api_key, base_url=base_url)
 
+    # Xây dựng danh sách messages hỗ trợ Multi-turn Conversation Memory
+    messages = [{"role": "system", "content": prompt_template}]
+    if chat_history:
+        # Lấy tối đa 4 tin nhắn gần nhất (2 lượt hội thoại)
+        for msg in chat_history[-4:]:
+            messages.append({"role": msg["role"], "content": msg["content"]})
+    
+    messages.append({"role": "user", "content": user_message})
+
     response = client.chat.completions.create(
         model=LLM_MODEL,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_message}
-        ],
+        messages=messages,
         temperature=TEMPERATURE,
         top_p=TOP_P,
     )
 
     answer = response.choices[0].message.content
+    elapsed = round(time.time() - start_time, 3)
 
     return {
         "answer": answer,
         "sources": chunks,
-        "retrieval_source": chunks[0].get("source", "hybrid") if chunks else "none"
+        "retrieval_source": chunks[0].get("source", "hybrid") if chunks else "none",
+        "mode": mode,
+        "elapsed_sec": elapsed
     }
 
 
