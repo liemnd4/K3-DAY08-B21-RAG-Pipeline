@@ -24,8 +24,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # =============================================================================
 
 st.set_page_config(
-    page_title="University Services RAG Chatbot",
-    page_icon="🎓",
+    page_title="Trợ Lý Hỏi Đáp Luật Lao Động Gen Z",
+    page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -35,18 +35,18 @@ st.set_page_config(
 # =============================================================================
 
 with st.sidebar:
-    st.title("🎓 University Services RAG")
-    st.caption("Trợ lý hỏi đáp về dịch vụ và chính sách đại học (học phí, học bổng, ký túc xá, thư viện)")
+    st.title("⚖️ Luật Lao Động Gen Z")
+    st.caption("Trợ lý AI tra cứu và giải đáp pháp lý lao động cho người trẻ (thử việc, OT, nghỉ phép, hợp đồng, sa thải)")
 
     st.divider()
 
     st.subheader("💡 Câu hỏi gợi ý")
     suggestions = [
-        "Học phí tại RMIT Vietnam là bao nhiêu?",
-        "Làm sao để đặt phòng học nhóm ở thư viện?",
-        "Điều kiện xin học bổng Academic Achievement?",
-        "Dịch vụ hỗ trợ chỗ ở cho sinh viên như thế nào?",
-        "Cách đăng ký học phần qua myRMIT?",
+        "Thời gian thử việc tối đa cho lập trình viên là bao lâu và lương tối thiểu bao nhiêu %?",
+        "Công ty sa thải tôi qua tin nhắn Zalo không báo trước 30 ngày đúng hay sai?",
+        "Làm thêm giờ (OT) vào ngày lễ được tính lương như thế nào?",
+        "Hợp đồng thử việc/thực tập có phải đóng BHXH không?",
+        "Số ngày nghỉ phép hàng năm tối thiểu theo quy định là bao nhiêu?",
     ]
     for s in suggestions:
         if st.button(s, use_container_width=True, key=f"sug_{s[:20]}"):
@@ -73,8 +73,8 @@ if "pending_query" not in st.session_state:
 # MAIN CHAT AREA
 # =============================================================================
 
-st.title("🎓 University Services RAG Chatbot")
-st.caption("Hệ thống hỏi đáp thông tin dịch vụ đại học (Học phí, Học bổng, Ký túc xá, Thư viện)")
+st.title("⚖️ Trợ Lý Hỏi Đáp Luật Lao Động Gen Z")
+st.caption("Hệ thống RAG tra cứu và giải đáp chính xác theo Bộ luật Lao động 2019 & Nghị định hướng dẫn")
 
 # Hiển thị lịch sử chat
 for msg in st.session_state.messages:
