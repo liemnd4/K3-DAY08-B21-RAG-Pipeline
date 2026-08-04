@@ -1,0 +1,22 @@
+# Hướng Dẫn Cách Tính Tiền Lương Làm Thêm Giờ (OT) Theo Quy Định Pháp Luật
+
+**Source:** https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/44924/huong-dan-cach-tinh-tien-luong-lam-them-gio
+**Crawled:** 2026-08-04T10:42:40.777091
+
+---
+
+# Hướng Dẫn Cách Tính Tiền Lương Làm Thêm Giờ (OT)
+
+Làm thêm giờ (OT) là thói quen phổ biến của nhân sự Gen Z. Tiền lương OT được tính theo quy định tại Điều 55 Nghị định 145/2020/NĐ-CP như sau:
+
+## 1. Mức lương OT ca ngày
+- **Ngày thường:** Lương OT = 150% x Tiền lương giờ bình thường.
+- **Ngày nghỉ hằng tuần (Thứ 7, Chủ nhật):** Lương OT = 200% x Tiền lương giờ bình thường.
+- **Ngày lễ, Tết, ngày nghỉ có hưởng lương:** Lương OT = 300% x Tiền lương giờ bình thường.
+
+## 2. Mức lương làm việc và OT ca đêm (22h - 6h)
+- Làm ca đêm thông thường: Cộng thêm ít nhất **30%** lương giờ ngày bình thường.
+- Làm thêm giờ (OT) vào ca đêm: Cộng thêm ít nhất **20%** lương làm việc ban ngày của ngày tương ứng.
+
+## 3. Giới hạn giờ OT tối đa
+Tổng số giờ OT không được vượt quá 50% số giờ làm việc bình thường trong 1 ngày, không quá 40 giờ/tháng và không quá 200 giờ/năm (trường hợp đặc biệt tối đa 300 giờ/năm).
